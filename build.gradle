@@ -22,14 +22,12 @@ publishing {
     }
     repositories {
         maven {
-            name = 'wholedoc-nexus'
+            name = wholedocRepositoryName
             credentials {
-                username = repoUsername
-                password = repoPassword
+                username = wholedocRepositoryUsername
+                password = wholedocRepositoryPassword
             }
-            def releaseRepoUrl = repoUrl + "/wholedoc-release"
-            def snapshotRepoUrl = repoUrl + "/wholedoc-snapshot"
-            url = version.endsWith('SNAPSHOT') ? snapshotRepoUrl : releaseRepoUrl
+            url = version.endsWith('SNAPSHOT') ? wholedocRepositoryUrlSnapshot : wholedocRepositoryUrlRelease
         }
     }
 }
